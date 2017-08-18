@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry,StyleSheet,Text,View,Image,TouchableHighlight,Dimensions,Navigator,Keyboard}
-from 'react-native';
-import {FormInput} from 'react-native-elements';
+import {AppRegistry,StyleSheet,Text,View,Image,TouchableHighlight,Dimensions,Navigator,Keyboard,TextInput} from 'react-native';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
@@ -50,17 +48,17 @@ export default class login extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        <Image source={require('images/login.png')} style={{width:width*0.8,height:this.state.imgHeight,marginTop:20,alignSelf:'center',marginTop:50}}/>
+        <Image source={require('images/login.png')} style={{width:width*0.8,height:this.state.imgHeight,marginTop:20,alignSelf:'center'}}/>
         <View style={styles.form}>
           <View style={{flexDirection: 'row'}}>
             <TouchableHighlight underlayColor={'transparent'} style={{marginTop:7,marginLeft:20}} onPress={()=>{this.props.navigator.pop();Keyboard.dismiss()}}>
               <Image style={{height:this.state.backArrowHeight}} source={require('images/BackArrow_active.png')}/>
             </TouchableHighlight>
-            <Text style={{color:'#0ec0be', textAlign:'center', fontSize:25,marginLeft:width/2-90, marginBottom:30}}>LOG IN</Text>
+            <Text style={{color:'#0ec0be', textAlign:'center', fontSize:25,marginLeft:width/2-90, fontFamily: 'Nunito-SemiBold'}}>LOG IN</Text>
           </View>
-          <View style={{flexDirection: 'row', marginRight:20, marginLeft:20}}>
+          <View style={{flexDirection: 'row', marginRight:20, marginLeft:20, marginTop: 30}}>
             <Image source={this.state.imgSourceEmail} style={{height: 15, width: 15,marginTop: 17 }}/>
-            <FormInput
+            <TextInput
               style={styles.input}
               placeholder={'Your e-mail'}
               placeholderTextColor='#3b3d5e'
@@ -72,7 +70,7 @@ export default class login extends Component {
          <View style={{marginRight:20, marginLeft: 20, backgroundColor:this.state.ulColorEmail, height: 2}}></View>
          <View style={{flexDirection: 'row', marginRight:20, marginLeft: 20}}>
           <Image source={this.state.imgSourcePassword} style={{height: 15, width: 15,marginTop: 17}}/>
-          <FormInput
+          <TextInput
             style={styles.input}
             placeholder={'Password'}
             secureTextEntry={true}
@@ -83,7 +81,7 @@ export default class login extends Component {
           />
         </View>
         <View style={{marginRight:20, marginLeft: 20, backgroundColor:this.state.ulColorPassword, height: 2}}></View>
-          <Text style={{textAlign: 'center' , fontSize: 15, color:'#0ec0be', marginTop:20 }}>FORGOT PASSWORD</Text>
+          <Text style={{textAlign: 'center' , fontSize: 15, color:'#0ec0be', marginTop:20, fontFamily: 'Nunito-SemiBold' }}>FORGOT PASSWORD</Text>
         <TouchableHighlight onPress={()=>this.props.navigator.push('mainTab')} underlayColor='#15193c' activeOpacity={0.9}>
             <View style={styles.buttonLogIn}>
               <Text style={styles.buttonText}>LOG IN</Text>
@@ -104,8 +102,8 @@ export default class login extends Component {
             </TouchableHighlight>
           </View>
           <View style={{flexDirection: 'row', marginTop: 15,justifyContent: 'center'}}>
-            <Text style={{color: 'white', fontSize: 15}}>Don't have an account? go to  </Text>
-          <Text style={{color: '#0ec0be', textDecorationLine: 'underline',fontFamily:'Muli-Bold'}} onPress={()=>this.props.navigator.push('signup')}>Sign Up</Text>
+            <Text style={{color: 'white', fontSize: 15, fontFamily: 'Muli-Regular'}}>Don't have an account? go to  </Text>
+          <Text style={{color: '#0ec0be', textDecorationLine: 'underline',fontFamily:'Muli-Regular'}} onPress={()=>this.props.navigator.push('signup')}>Sign Up</Text>
           </View>
         </View>
       </View>
@@ -124,12 +122,13 @@ const styles = StyleSheet.create({
   form: {
     marginLeft:20,
     marginRight:20,
-    marginTop: 50,
+    marginTop: 20,
   },
   input: {
     color: '#0ec0be',
     marginRight: 20,
-    width: width-60
+    width: width-60,
+    fontFamily: 'Nunito-Regular'
   },
   buttonLogIn: {
     backgroundColor: '#0ec0be',
@@ -173,8 +172,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#15193c',
-    fontSize: 15,
+    fontSize: 20,
     fontFamily:'Nunito-Regular',
-    color:'white'
   }
 });

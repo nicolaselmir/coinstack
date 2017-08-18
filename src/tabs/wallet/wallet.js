@@ -24,7 +24,7 @@ export default class Wallet extends Component{
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>x10</Text>
             </View>
 
-            <View style={{flexDirection:'column',alignItems:'flex-end',marginLeft:'50%'}}>
+            <View style={{flexDirection:'column',alignItems:'flex-end',marginLeft:200}}>
               <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Bold',fontSize:12}}>+10$</Text>
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>+10.0.8%</Text>
             </View>
@@ -33,14 +33,14 @@ export default class Wallet extends Component{
         </TouchableHighlight>
 
         <TouchableHighlight underlayColor='transparent' style={{height:78,backgroundColor:'#171a3d',borderWidth:1,width:"88%",borderRadius:5,marginTop:10,borderColor:'#0ec0be',justifyContent:'center'}}>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
 
             <View style={{flexDirection:'column',alignItems:'flex-start'}}>
               <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Bold',fontSize:17}}>Dogecoin</Text>
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>x100</Text>
             </View>
 
-            <View style={{flexDirection:'column',alignItems:'flex-end',marginLeft:'50%'}}>
+            <View style={{flexDirection:'column', marginRight: 20, alignItems:'flex-end'}}>
               <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Bold',fontSize:12}}>+5.09$</Text>
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>+5.02%</Text>
             </View>
@@ -56,7 +56,7 @@ export default class Wallet extends Component{
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>x10</Text>
             </View>
 
-            <View style={{flexDirection:'column',alignItems:'flex-end',marginLeft:'50%'}}>
+            <View style={{flexDirection:'column',alignItems:'flex-end',marginLeft: 195}}>
               <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Bold',fontSize:12}}>+10$</Text>
             <Text style={{marginLeft:20,color:'#0ec0be',fontFamily:'Nunito-Light',fontSize:12}}>+10.0.8%</Text>
             </View>

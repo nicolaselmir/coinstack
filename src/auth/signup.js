@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {AppRegistry,StyleSheet,Text,View,Image,TouchableHighlight,Dimensions,Navigator,Keyboard}
+import {AppRegistry,StyleSheet,Text,View,Image,TouchableHighlight,Dimensions,Navigator,Keyboard,TextInput}
 from 'react-native';
-import {FormInput} from 'react-native-elements';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
@@ -62,12 +61,12 @@ export default class Register extends Component {
             <TouchableHighlight underlayColor={'transparent'} style={{marginTop:7,marginLeft:20}} onPress={()=>{this.props.navigator.pop();Keyboard.dismiss()}}>
               <Image style={{height: 20}} source={require('images/BackArrow_active.png')}/>
             </TouchableHighlight>
-            <Text style={{color:'#0ec0be', textAlign:'center', fontSize:25,marginLeft:width/2-99}}>SIGN UP</Text>
+            <Text style={{color:'#0ec0be', textAlign:'center', fontSize:25,marginLeft:width/2-99, fontFamily:'Nunito-SemiBold'}}>SIGN UP</Text>
           </View>
           <Image source={require('images/Logo.png')} style={{alignSelf: 'center', marginTop: this.state.margintop, width: 95, height: this.state.imgHeight, }}/>
           <View style={{flexDirection: 'row', marginRight:20, marginLeft:20, marginTop: 20}}>
             <Image source={this.state.imgSourceName} style={{height: 15, width: 15,marginTop: 17 }}/>
-            <FormInput
+            <TextInput
               style={styles.input}
               placeholder={'Name'}
               placeholderTextColor='#3b3d5e'
@@ -79,7 +78,7 @@ export default class Register extends Component {
          <View style={{marginRight:20, marginLeft: 20, backgroundColor:this.state.ulColorName, height: 2}}></View>
           <View style={{flexDirection: 'row', marginRight:20, marginLeft:20}}>
             <Image source={this.state.imgSourceEmail} style={{height: 15, width: 15,marginTop: 17 }}/>
-            <FormInput
+            <TextInput
               style={styles.input}
               placeholder={'E-mail'}
               placeholderTextColor='#3b3d5e'
@@ -91,7 +90,7 @@ export default class Register extends Component {
          <View style={{marginRight:20, marginLeft: 20, backgroundColor:this.state.ulColorEmail, height: 2}}></View>
          <View style={{flexDirection: 'row', marginRight:20, marginLeft: 20}}>
           <Image source={this.state.imgSourcePassword} style={{height: 15, width: 15,marginTop: 17}}/>
-          <FormInput
+          <TextInput
             style={styles.input}
             placeholder={'Password'}
             secureTextEntry={true}
@@ -112,19 +111,19 @@ export default class Register extends Component {
             <TouchableHighlight underlayColor='#2496f1' activeOpacity={0.9}>
               <View style={styles.buttonGoogle}>
                 <Image source={require('images/google.png')}/>
-                <Text style={{color: 'white', textAlign: 'center'}}>GOOGLE</Text>
+                <Text style={{color: 'white', textAlign: 'center', fontFamily:'Nunito-Bold'}}>GOOGLE</Text>
               </View>
             </TouchableHighlight>
             <TouchableHighlight underlayColor='#3b5997' activeOpacity={0.9}>
               <View style={styles.buttonFacebook}>
                 <Image source={require('images/facebook.png')}/>
-                <Text style={{color: 'white' }}>FACEBOOK</Text>
+                <Text style={{color: 'white', fontFamily:'Nunito-Bold' }}>FACEBOOK</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={{flexDirection: 'row', marginTop: 15,justifyContent: 'center'}}>
-            <Text style={{color: 'white', fontSize: 15}}>Already have an account? go to  </Text>
-            <Text style={{color: '#0ec0be', textDecorationLine: 'underline'}} onPress={()=>navigate('Login')}>Log in</Text>
+            <Text style={{color: 'white', fontSize: 15, fontFamily: 'Muli-Regular'}}>Already have an account? go to  </Text>
+            <Text style={{color: '#0ec0be', textDecorationLine: 'underline',fontSize: 15 ,fontFamily: 'Muli-Regular'}} onPress={()=>this.props.navigator.push('login')}>Log in</Text>
           </View>
         </View>
       </View>
@@ -148,7 +147,8 @@ const styles = StyleSheet.create({
   input: {
     color: '#0ec0be',
     marginRight: 20,
-    width: width-60
+    width: width-60,
+    fontFamily: 'Nunito-Regular'
   },
   buttonLogIn: {
     backgroundColor: '#0ec0be',
@@ -193,5 +193,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#15193c',
     fontSize: 20,
+    fontFamily: 'Nunito-Regular'
   }
 });
